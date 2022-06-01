@@ -1,0 +1,59 @@
+{
+  "name": "pistos",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.24.0",
+    "netlify-cli": "^8.19.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-geocode": "^0.2.3",
+    "react-places-autocomplete": "^7.3.0",
+    "react-razorpay": "^1.1.4",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "4.0.3",
+    "react-tooltip": "^4.2.21",
+    "styled-components": "^5.3.3",
+    "tw-elements": "^1.0.0-alpha11",
+    "uuid": "^8.3.2",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "npm run watch:css && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "watch:css": "postcss src/styles/tailwind.css -o src/styles/index.css",
+    "watch": "chokidar \"./src/**/*.js\" -c \"npm run watch:css\"",
+    "dev": "concurrently \"npm run watch\" \"npm run start\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "chokidar-cli": "^2.1.0",
+    "concurrently": "^6.2.0",
+    "postcss-cli": "^8.3.1",
+    "react-tabs": "^3.2.3",
+    "tailwindcss": "^2.2.4"
+  }
+}
