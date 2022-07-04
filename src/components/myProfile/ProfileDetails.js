@@ -50,7 +50,7 @@ const ProfileDetails = () => {
         <div>
           <h6 className='mb-3 text-xl font-medium text-gray-100 md:text-3xl md:mb-5'>
             Hi There User !
-           {/* {userData} */}
+           {userData}
           </h6>
           <NavLink
             to='/signin'

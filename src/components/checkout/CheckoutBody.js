@@ -181,16 +181,18 @@ const CheckoutBody = () => {
       },
     };
 
+    console.log(`Options ${options.order_id}`);
+
     const paymentObject = new window.Razorpay(options);
 
     paymentObject.on('payment.failed', function (response) {
-      alert(response.error.code);
-      alert(response.error.description);
-      alert(response.error.source);
-      alert(response.error.step);
-      alert(response.error.reason);
-      alert(response.error.metadata.order_id);
-      alert(response.error.metadata.payment_id);
+      console.log(response.error.code);
+      console.log(response.error.description);
+      console.log(response.error.source);
+      console.log(response.error.step);
+      console.log(response.error.reason);
+      console.log(response.error.metadata.order_id);
+      console.log(response.error.metadata.payment_id);
     });
     paymentObject.open();
 
@@ -221,8 +223,12 @@ const CheckoutBody = () => {
       config
     );
     const validationData = validateResponse.data;
+
+    
     console.log(validationData);
   };
+
+
 
   return (
     <div className='container grid gap-24 my-16 md:my-24 lg:my-40 md:grid-cols-2'>

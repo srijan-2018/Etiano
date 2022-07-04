@@ -19,7 +19,7 @@ function loadScript(src) {
 }
 
 
-const amount = 500;
+                                                                                            
 
 const Member = ({ member }) => {
 
@@ -36,25 +36,23 @@ const Member = ({ member }) => {
     }
 
     const options = {
-        "key": "rzp_test_pLeJZKECvw4lZM", // Enter the Key ID generated from the Dashboard
-        "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        "currency": "INR",
-        "name": "Acme Corp",
-        "description": "Test Transaction",
- //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        "handler": function (response){
-            alert(response.razorpay_payment_id);
-            alert(response.razorpay_order_id);
-            alert(response.razorpay_signature)
+        key: "rzp_test_pLeJZKECvw4lZM", // Enter the Key ID generated from the Dashboard
+        amount: member.membership_price * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        currency: "INR",
+        name: "Acme Corp",
+        description: "Test Transaction",
+        handler: function (response){
+            console.log("Response::", response);
+            console.log("razorpay_payment_id is: ",response.razorpay_payment_id);
+            console.log("razorpay_order_id is: ",response.razorpay_order_id);
+            console.log("razorpay_signature is: ",response.razorpay_signature)
         },
         "prefill": {
             "name": "Gaurav Kumar",
             "email": "gaurav.kumar@example.com",
             "contact": "9999999999"
         },
-        "notes": {
-            "address": "Razorpay Corporate Office"
-        },
+
         "theme": {
             "color": "#3399cc"
         }
@@ -72,6 +70,7 @@ const Member = ({ member }) => {
             alert(response.error.metadata.order_id);
             alert(response.error.metadata.payment_id);
     });
+    
     paymentObject.open();
   }
 
